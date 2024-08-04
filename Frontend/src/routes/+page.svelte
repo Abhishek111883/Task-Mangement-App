@@ -1,5 +1,4 @@
 <script>
-  // import Fetchtask from "./../component/Fetch_Task/fetchtask.svelte";
   import Addtask from "./../component/Add_Task/addtask.svelte";
   import { Button } from "flowbite-svelte";
   import { onMount } from "svelte";

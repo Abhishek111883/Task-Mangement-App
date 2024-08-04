@@ -16,6 +16,7 @@
   let error = "";
   let tasks = [];
 
+  // Function to validate the form fields
   function validateForm() {
     if (
       Title === "" ||
@@ -43,6 +44,7 @@
     }, 2000); // Hide toast after 2 seconds
   }
 
+  // Function to add a task
   async function addTask() {
     if (!validateForm()) {
       return;
@@ -73,6 +75,7 @@
     }
   }
 
+  // clear form fields
   function clearForm() {
     Title = "";
     Description = "";
@@ -81,6 +84,7 @@
     error = "";
   }
 
+  // Function to fetch tasks
   async function fetchTasks() {
     try {
       const response = await fetch("http://localhost:8055/items/tasks", {
@@ -103,6 +107,7 @@
     }
   }
 
+  // Function to delete a task
   async function deleteTask(taskId) {
     try {
       const response = await fetch(
@@ -261,11 +266,13 @@
               {task.Due_Date}
             </div>
 
-            <Button
-              on:click={() => deleteTask(task.id)}
-              class="btn btn-primary text-xl bg-red-700 text-center"
-              >Delete</Button
-            >
+            <div class="flex items-center justify-center md:block">
+              <Button
+                on:click={() => deleteTask(task.id)}
+                class="btn btn-primary text-xl bg-red-700 text-center"
+                >Delete</Button
+              >
+            </div>
           </div>
         </div>
       </div>

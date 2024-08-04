@@ -9,6 +9,11 @@
   let toastStatus = false;
   let counter = 2;
 
+  let email = "";
+  let password = "";
+  let errorMessage = "";
+  // const dispatch = createEventDispatcher();
+
   function trigger() {
     toastStatus = true;
     counter = 2;
@@ -20,11 +25,6 @@
     toastStatus = false;
   }
 
-  let email = "";
-  let password = "";
-  let errorMessage = "";
-  const dispatch = createEventDispatcher();
-
   async function login() {
     try {
       const response = await axios.post("http://localhost:8055/auth/login", {
@@ -32,7 +32,8 @@
         password,
       });
       localStorage.setItem("access_token", response.data.data.access_token);
-      dispatch("loginSuccess");
+      // Emit login success event
+      // dispatch("loginSuccess");
       trigger();
       // Redirect to home after successful login
       window.location.href = "/";
@@ -47,7 +48,6 @@
 
 <div class="backdrop-blur-sm bg-white/30">
   <div class="flex gap-10 items-center justify-center">
-    <!-- <Button on:click={trigger} class="my-3">Restart</Button> -->
     <Toast dismissable={false} transition={slide} bind:toastStatus>
       <CheckCircleSolid slot="icon" class="w-5 h-5" />
       Login Successful
