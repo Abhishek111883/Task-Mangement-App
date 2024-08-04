@@ -28,7 +28,7 @@ npm install
 ```
 
 ### Step 3: Configure Environment Variables
-Create a .env file in the backend directory with the following content:
+Alter a .env file in the backend directory with the following content:
 
 ```plaintext
 DB_CLIENT=mysql
@@ -78,4 +78,3 @@ Start the Svelte development server:
 npm run dev
 ```
 
-The Svelte development server should now be running on http://localhost:3000.
