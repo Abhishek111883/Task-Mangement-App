@@ -17,7 +17,7 @@ Ensure you have the following installed on your machine:
 ### Step 1: Clone the Repository
 
 ```bash
-git clone <this-repo-url>
+git clone https://github.com/Abhishek111883/Task-Mangement-App.git
 cd <this-repo-directory>/backend
 ```
 
